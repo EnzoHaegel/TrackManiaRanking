@@ -1,0 +1,41 @@
+.map-list-infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .map-list-infos-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: #fff;
+        font-size: 1.2em;
+        font-weight: bold;
+
+        .at {
+            display: flex;
+
+            .medal {
+                height: 1.2em;
+                margin: 3px;
+            }
+        }
+        .name {
+            display: flex;
+
+            .tag {
+                display: flex;
+                border-radius: 50% 0 / 120%;
+                transform: skew(-8deg);
+                background-color: rgb(69, 69, 69);
+                padding: 0.2em;
+                margin-bottom: auto;
+            }
+            .flag {
+                height: 1.2em;
+                margin: 3px;
+            }
+        }
+    }
+}

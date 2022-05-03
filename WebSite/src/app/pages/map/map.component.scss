@@ -1,0 +1,37 @@
+.container {
+    // height: calc(100% - 64px - 20px);
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+
+    .map {
+        width: 40%;
+        .map-thumb {
+            width: calc(100% - 60px);
+            margin: 10px 20px 10px 40px;
+            border-radius: 50% 0 / 120%;
+            transform: skew(-8deg);
+            background-color: rgb(62, 62, 62);
+        }
+        .map-infos {
+            // height: auto;
+            width: 100%;
+        }
+    }
+    .chrono {
+        width: 60%;
+    }
+}
+// https://trackmania-prod-storage-map-thumbnail.s3.eu-west-1.amazonaws.com/4e6cfdf3-d2ec-43d8-bd99-44f1a5016ee9.jpg
+
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        .chrono {
+            width: calc(100% - 20px);
+        }
+        .map {
+            width: calc(100% - 20px);
+        }
+    }
+}

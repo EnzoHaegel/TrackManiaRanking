@@ -1,0 +1,104 @@
+<!-- const infos = {
+    "author": "c8a6ac6d-6847-4dbd-b052-6475da149518",
+    "name": "Eggflip",
+    "mapType": "TrackMania\\TM_Race",
+    "mapStyle": "",
+    "authorScore": 7672,
+    "goldScore": 9000,
+    "silverScore": 10000,
+    "bronzeScore": 12000,
+    "collectionName": "Stadium",
+    "filename": "Eggflip.Map.Gbx",
+    "isPlayable": true,
+    "mapId": "999aaf7a-fdc5-4f2d-9972-8c1d67f83339",
+    "mapUid": "MH8WnAOEI3HAQkBVlBOeyK4rLC9",
+    "submitter": "deb52738-18fd-4a49-b94e-208d18338150",
+    "timestamp": "2022-04-16T18:31:20+00:00",
+    "fileUrl": "https://prod.trackmania.core.nadeo.online/storageObjects/67c0eb93-8b66-4c7b-a937-3a098e21f41e",
+    "thumbnailUrl": "https://prod.trackmania.core.nadeo.online/storageObjects/4e6cfdf3-d2ec-43d8-bd99-44f1a5016ee9.jpg",
+    "authorplayer": {
+      "name": "NachoQT",
+      "tag": "$O$FF0I$FFFI$D4DI$333I",
+      "id": "c8a6ac6d-6847-4dbd-b052-6475da149518",
+      "zone": {
+        "name": "Victoria",
+        "flag": "Victoria",
+        "parent": {
+          "name": "Australia",
+          "flag": "AUS",
+          "parent": {
+            "name": "Oceania",
+            "flag": "oceania",
+            "parent": { "name": "World", "flag": "WOR" }
+          }
+        }
+      },
+      "meta": {
+        "twitch": "NachoQT",
+        "youtube": "UChu8enTVUqyI_sHI1TuU7gg",
+        "twitter": "NachoQT_"
+      }
+    },
+    "submitterplayer": {
+      "name": "richarde_e",
+      "tag": "$FA5S$AF1P$D41E$AF1E$FA5D",
+      "id": "deb52738-18fd-4a49-b94e-208d18338150",
+      "zone": {
+        "name": "Lithuania",
+        "flag": "LTU",
+        "parent": {
+          "name": "Europe",
+          "flag": "europe",
+          "parent": { "name": "World", "flag": "WOR" }
+        }
+      },
+      "meta": {}
+    },
+    "exchangeid": 57885
+  } -->
+<!-- Create a list with map name, user name, score, and a button to download the map. -->
+<div class="map-list-infos">
+    <!-- A list with divider in material -->
+    <mat-list>
+        <div class="map-list-infos-item">
+            <mat-list-item>
+                <div class="map-list-infos-item-name">
+                    <h3>Nom: {{ ' ' + map.name }}</h3>
+                </div>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+            <mat-list-item>
+                <div class="map-list-infos-item-author">
+                    <div class="name">
+                        <h4>Auteur: {{' '}}</h4>
+                        <img class="flag" [src]="getFlagUrl(map.authorplayer.zone.flag)" alt="">
+                        <div class="tag">
+                          <lib-ng-colored-tm-text [text]="map.submitterplayer.tag"></lib-ng-colored-tm-text>
+                        </div>
+                        <h4>{{ ' ' + map.authorplayer.name }}</h4>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+            <mat-list-item>
+                <div class="map-list-infos-item-score">
+                    <div class="at">
+                        <h4>
+                            Temps Auteur:{{ ' ' + returnTime(map.authorScore) }}
+                        </h4>
+                        <img class="medal" src="https://trackmania.io/img/medal_author.png">
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+            </mat-list-item>
+            <mat-list-item>
+                <div class="map-list-infos-item-download">
+                    <button mat-raised-button color="primary" (click)="downloadMap()">
+                        <mat-icon>file_download</mat-icon>
+                        <span>Download</span>
+                    </button>
+                </div>
+            </mat-list-item>
+        </div>
+    </mat-list>
+</div>
