@@ -1,0 +1,386 @@
+{
+  "tops": [
+    {
+      "player": {
+        "name": "Jack.3_",
+        "tag": "$S$I$0AFI$FFFC$0AFE$0F0GS",
+        "id": "10408066-087a-404a-96d2-c141ab8b9188",
+        "zone": {
+          "name": "Frankfurt",
+          "flag": "Frankfurt",
+          "parent": {
+            "name": "Hessen",
+            "flag": "hesse",
+            "parent": {
+              "name": "Germany",
+              "flag": "GER",
+              "parent": {
+                "name": "Europe",
+                "flag": "europe",
+                "parent": { "name": "World", "flag": "WOR" }
+              }
+            }
+          }
+        }
+      },
+      "position": 1,
+      "time": 52792,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_10408066-087a-404a-96d2-c141ab8b9188_(0'52''79).replay.gbx",
+      "timestamp": "2022-05-03T09:07:33+00:00",
+      "url": "/api/download/ghost/2d8e009c-d075-4ce6-9b6a-89c2f131131f"
+    },
+    {
+      "player": {
+        "name": "xTigershark777",
+        "tag": "$S$I$0AFI$FFFC$0AFE$0F0GS",
+        "id": "cb137a6a-7112-4917-8e57-c457e082ea3d",
+        "zone": {
+          "name": "Сибирский федеральный округ",
+          "flag": "",
+          "parent": {
+            "name": "Russia",
+            "flag": "RUS",
+            "parent": {
+              "name": "Europe",
+              "flag": "europe",
+              "parent": { "name": "World", "flag": "WOR" }
+            }
+          }
+        }
+      },
+      "position": 2,
+      "time": 52872,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_cb137a6a-7112-4917-8e57-c457e082ea3d_(0'52''87).replay.gbx",
+      "timestamp": "2022-05-02T22:28:54+00:00",
+      "url": "/api/download/ghost/a38da29b-f20b-44b2-8f9c-16d640ada8c1"
+    },
+    {
+      "player": {
+        "name": "Odgor.",
+        "id": "1f1e3338-baf6-4969-b756-100e2cd172a0",
+        "zone": {
+          "name": "Norway",
+          "flag": "NOR",
+          "parent": {
+            "name": "Europe",
+            "flag": "europe",
+            "parent": { "name": "World", "flag": "WOR" }
+          }
+        },
+        "meta": {}
+      },
+      "position": 3,
+      "time": 52965,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_1f1e3338-baf6-4969-b756-100e2cd172a0_(0'52''96).replay.gbx",
+      "timestamp": "2022-05-03T15:58:58+00:00",
+      "url": "/api/download/ghost/d4c9e451-80df-4440-a10e-7869fde45463"
+    },
+    {
+      "player": {
+        "name": "eLconn21",
+        "tag": "$F00JOEL",
+        "id": "d46fb45d-d422-47c9-9785-67270a311e25",
+        "zone": {
+          "name": "Středočeský kraj",
+          "flag": "Středočeský kraj",
+          "parent": {
+            "name": "Czechia",
+            "flag": "CZE",
+            "parent": {
+              "name": "Europe",
+              "flag": "europe",
+              "parent": { "name": "World", "flag": "WOR" }
+            }
+          }
+        }
+      },
+      "position": 4,
+      "time": 53132,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_d46fb45d-d422-47c9-9785-67270a311e25_(0'53''13).replay.gbx",
+      "timestamp": "2022-05-02T17:40:19+00:00",
+      "url": "/api/download/ghost/4edf4cde-4ee1-4a31-b411-9b73630918f4"
+    },
+    {
+      "player": {
+        "name": "PogDragon",
+        "tag": "$S$F00S$F50P$FA0F",
+        "id": "b981e0b1-2d6a-4470-9b52-c1f6b0b1d0a6",
+        "zone": {
+          "name": "Quebec",
+          "flag": "Quebec",
+          "parent": {
+            "name": "Canada",
+            "flag": "CAN",
+            "parent": {
+              "name": "North America",
+              "flag": "namerica",
+              "parent": { "name": "World", "flag": "WOR" }
+            }
+          }
+        },
+        "meta": {}
+      },
+      "position": 5,
+      "time": 53168,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_b981e0b1-2d6a-4470-9b52-c1f6b0b1d0a6_(0'53''16).replay.gbx",
+      "timestamp": "2022-05-03T01:46:13+00:00",
+      "url": "/api/download/ghost/03fc76d6-56fa-4d52-b86e-afc217136c0f"
+    },
+    {
+      "player": {
+        "name": "Arachidamiae",
+        "tag": "$O$S$9CFC$FCFA$FFFT$FCFC$9CFI",
+        "id": "4a1e8eaa-ebe8-41ad-b431-57eb679c25a0",
+        "zone": {
+          "name": "North Carolina",
+          "flag": "North_Carolina",
+          "parent": {
+            "name": "United States",
+            "flag": "USA",
+            "parent": {
+              "name": "North America",
+              "flag": "namerica",
+              "parent": { "name": "World", "flag": "WOR" }
+            }
+          }
+        },
+        "meta": {}
+      },
+      "position": 6,
+      "time": 53185,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_4a1e8eaa-ebe8-41ad-b431-57eb679c25a0_(0'53''18).replay.gbx",
+      "timestamp": "2022-05-03T15:25:46+00:00",
+      "url": "/api/download/ghost/c7b32fec-8027-4c09-8179-47985986e221"
+    },
+    {
+      "player": {
+        "name": "Scrapie98",
+        "tag": "$FC0AYAYA",
+        "id": "da4642f9-6acf-43fe-88b6-b120ff1308ba",
+        "zone": {
+          "name": "Liège",
+          "flag": "Liege",
+          "parent": {
+            "name": "Belgium",
+            "flag": "BEL",
+            "parent": {
+              "name": "Europe",
+              "flag": "europe",
+              "parent": { "name": "World", "flag": "WOR" }
+            }
+          }
+        },
+        "meta": {
+          "vanity": "scrapie",
+          "tmgl": true,
+          "twitch": "scrapietv",
+          "youtube": "UCGJ_sOFdwqH8fzT4eBZ0shw",
+          "twitter": "scrapietv"
+        }
+      },
+      "position": 7,
+      "time": 53185,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_da4642f9-6acf-43fe-88b6-b120ff1308ba_(0'53''18).replay.gbx",
+      "timestamp": "2022-05-03T16:52:18+00:00",
+      "url": "/api/download/ghost/e88ad913-a5f2-4219-b21b-01885b5a57fb"
+    },
+    {
+      "player": {
+        "name": "jandro-._",
+        "tag": "$ADF300 $I$258",
+        "id": "ed20f0c8-16d6-484b-bec6-2ae659f7150f",
+        "zone": {
+          "name": "Florida",
+          "flag": "Florida",
+          "parent": {
+            "name": "United States",
+            "flag": "USA",
+            "parent": {
+              "name": "North America",
+              "flag": "namerica",
+              "parent": { "name": "World", "flag": "WOR" }
+            }
+          }
+        },
+        "meta": {}
+      },
+      "position": 8,
+      "time": 53195,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_ed20f0c8-16d6-484b-bec6-2ae659f7150f_(0'53''19).replay.gbx",
+      "timestamp": "2022-05-03T16:14:40+00:00",
+      "url": "/api/download/ghost/c39d0673-a291-45c3-9667-e5e177d9cf75"
+    },
+    {
+      "player": {
+        "name": "BarbosTM",
+        "tag": "$S$777S$666HI$555F$444T",
+        "id": "9ebb2ece-61a8-4dbf-9173-25b9d64ad117",
+        "zone": {
+          "name": "Duisburg",
+          "flag": "Duisburg",
+          "parent": {
+            "name": "Nordrhein-Westfalen",
+            "flag": "nordrhein-westfalen",
+            "parent": {
+              "name": "Germany",
+              "flag": "GER",
+              "parent": {
+                "name": "Europe",
+                "flag": "europe",
+                "parent": { "name": "World", "flag": "WOR" }
+              }
+            }
+          }
+        }
+      },
+      "position": 9,
+      "time": 53212,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_9ebb2ece-61a8-4dbf-9173-25b9d64ad117_(0'53''21).replay.gbx",
+      "timestamp": "2022-05-02T18:00:03+00:00",
+      "url": "/api/download/ghost/09f1928d-1f88-4297-8801-1e185b88a1df"
+    },
+    {
+      "player": {
+        "name": "TheJermu",
+        "id": "f19f6059-8827-48c6-87f6-2d5503cbc4cc",
+        "zone": {
+          "name": "Finland",
+          "flag": "FIN",
+          "parent": {
+            "name": "Europe",
+            "flag": "europe",
+            "parent": { "name": "World", "flag": "WOR" }
+          }
+        }
+      },
+      "position": 10,
+      "time": 53225,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_f19f6059-8827-48c6-87f6-2d5503cbc4cc_(0'53''22).replay.gbx",
+      "timestamp": "2022-05-02T18:37:15+00:00",
+      "url": "/api/download/ghost/4b7de016-bf82-45cc-bb80-fc96f44b7f69"
+    },
+    {
+      "player": {
+        "name": "wllard",
+        "tag": "$F96PEACH",
+        "id": "38e22fc8-660e-4a83-9ef6-334990a227cb",
+        "zone": {
+          "name": "Georgia",
+          "flag": "Georgia",
+          "parent": {
+            "name": "United States",
+            "flag": "USA",
+            "parent": {
+              "name": "North America",
+              "flag": "namerica",
+              "parent": { "name": "World", "flag": "WOR" }
+            }
+          }
+        },
+        "meta": {}
+      },
+      "position": 11,
+      "time": 53255,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_38e22fc8-660e-4a83-9ef6-334990a227cb_(0'53''25).replay.gbx",
+      "timestamp": "2022-05-02T22:45:59+00:00",
+      "url": "/api/download/ghost/0a31a0ca-8028-4f7b-beab-71147ac1b7e3"
+    },
+    {
+      "player": {
+        "name": "ShcrTM",
+        "tag": "$W$FC6K$F93F$F60C",
+        "id": "a6ae76c9-9030-4a7b-b533-cacfd6e85cb2",
+        "zone": {
+          "name": "Drôme",
+          "flag": "Drome",
+          "parent": {
+            "name": "Auvergne-Rhône-Alpes",
+            "flag": "auvergne-rhone-alpes",
+            "parent": {
+              "name": "France",
+              "flag": "FRA",
+              "parent": {
+                "name": "Europe",
+                "flag": "europe",
+                "parent": { "name": "World", "flag": "WOR" }
+              }
+            }
+          }
+        },
+        "meta": { "twitch": "shcrtm", "youtube": "UCA8px8Y4RVCwekze5VxdzHg" }
+      },
+      "position": 12,
+      "time": 53262,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_a6ae76c9-9030-4a7b-b533-cacfd6e85cb2_(0'53''26).replay.gbx",
+      "timestamp": "2022-05-02T21:41:44+00:00",
+      "url": "/api/download/ghost/961c1d4a-b6b5-4c24-add1-a35589118443"
+    },
+    {
+      "player": {
+        "name": "twist__",
+        "id": "60e9eb34-0b7a-42bc-aecb-2d7bce734712",
+        "zone": {
+          "name": "Finland",
+          "flag": "FIN",
+          "parent": {
+            "name": "Europe",
+            "flag": "europe",
+            "parent": { "name": "World", "flag": "WOR" }
+          }
+        },
+        "meta": {}
+      },
+      "position": 13,
+      "time": 53295,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_60e9eb34-0b7a-42bc-aecb-2d7bce734712_(0'53''29).replay.gbx",
+      "timestamp": "2022-05-03T16:36:45+00:00",
+      "url": "/api/download/ghost/172c0ce4-cdf2-494c-838e-a394c113a2c9"
+    },
+    {
+      "player": {
+        "name": "Nerms23",
+        "tag": "$0F0J$000A$FF0M",
+        "id": "70e6f70b-5670-48d8-8551-fb8bb5181f03",
+        "zone": {
+          "name": "Jamaica",
+          "flag": "JAM",
+          "parent": {
+            "name": "North America",
+            "flag": "namerica",
+            "parent": { "name": "World", "flag": "WOR" }
+          }
+        }
+      },
+      "position": 14,
+      "time": 53305,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_70e6f70b-5670-48d8-8551-fb8bb5181f03_(0'53''30).replay.gbx",
+      "timestamp": "2022-05-03T16:39:38+00:00",
+      "url": "/api/download/ghost/2ea6a38a-51cd-4281-8cdc-82379ae25562"
+    },
+    {
+      "player": {
+        "name": "BC_Zypher.tm",
+        "id": "4a983dc3-a938-4564-8a1c-8be20779f069",
+        "zone": {
+          "name": "Lisboa",
+          "flag": "Lisboa",
+          "parent": {
+            "name": "Portugal",
+            "flag": "POR",
+            "parent": {
+              "name": "Europe",
+              "flag": "europe",
+              "parent": { "name": "World", "flag": "WOR" }
+            }
+          }
+        }
+      },
+      "position": 15,
+      "time": 53318,
+      "filename": "Replays\\Downloaded\\5bcfc935-f020-4a4c-9bc5-a9837b03d198_4a983dc3-a938-4564-8a1c-8be20779f069_(0'53''31).replay.gbx",
+      "timestamp": "2022-05-03T01:11:52+00:00",
+      "url": "/api/download/ghost/3fab34d7-f5a9-4df2-b0dc-27de41b750f8"
+    }
+  ],
+  "playercount": 0
+}

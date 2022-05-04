@@ -20,7 +20,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-    "@icenore/ng-tm-colors-text": "^1.1.1",
+    "@icenore/ng-tm-colors-text": "^1.2.4",
     "ng-colored-tm-text": "^1.0.1",
     "ng-http-loader": "^11.0.1",
     "rxjs": "~7.5.0",

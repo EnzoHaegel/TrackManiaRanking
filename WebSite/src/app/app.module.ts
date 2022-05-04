@@ -14,12 +14,18 @@ import { MapInfosComponent } from './pages/map/map-infos/map-infos.component';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { NgColoredTmTextModule } from 'ng-colored-tm-text';
+import { MapLeaderboardComponent } from './pages/map/map-leaderboard/map-leaderboard.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    MapInfosComponent
+    MapInfosComponent,
+    MapLeaderboardComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,11 @@ import { NgColoredTmTextModule } from 'ng-colored-tm-text';
     MatMenuModule,
     MatListModule,
     MatButtonModule,
-    NgColoredTmTextModule
+    NgColoredTmTextModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

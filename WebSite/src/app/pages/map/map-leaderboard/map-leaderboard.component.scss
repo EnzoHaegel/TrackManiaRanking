@@ -1,0 +1,67 @@
+.demo-table {
+    width: 100%;
+}
+
+.mat-row .mat-cell {
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+    border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+    font-weight: bold;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 300px;
+
+    .tag {
+        display: flex;
+        margin-right: 3px;
+    }
+
+    .flag {
+        height: 16px;
+        margin-right: 3px;
+    }
+
+    .medal {
+        height: 18px;
+        margin-right: 3px;
+    }
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 500px;
+}
+
+.mat-column-position {
+    flex: 0 0 8%;
+}
+
+.mat-column-time {
+    flex: 0 0 15%;
+}
+
+.medalName {
+    visibility: visible;
+}
+
+// set medName hidden if size is under 800px
+@media screen and (max-width: 800px) {
+    .medalName {
+        visibility: hidden;
+    }
+
+    .mat-column-medal {
+        flex: 0 0 10%;
+    }
+}
