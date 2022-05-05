@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "trackmaniayo"
+  },
+  "targets": {
+    "trackmaniayo": {
+      "hosting": {
+        "WebSite": [
+          "trackmaniayo"
+        ]
+      }
+    }
   }
 }
