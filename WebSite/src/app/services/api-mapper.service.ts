@@ -39,7 +39,7 @@ export class ApiMapperService {
       tag: data.tag,
       id: data.id,
       zone: data.zone ? this.zoneMapper(data.zone) : null,
-      meta: this.metaMapper(data.meta)
+      meta: data.meta ? this.metaMapper(data.meta) : undefined
     };
   }
 
@@ -53,9 +53,9 @@ export class ApiMapperService {
 
   public metaMapper(data: any): IMeta {
     return {
-      twitch: data.twitch,
-      youtube: data.youtube,
-      twitter: data.twitter
+      twitch: data.twitch ? data.twitch : undefined,
+      youtube: data.youtube ? data.youtube : undefined,
+      twitter: data.twitter ? data.twitter : undefined,
     };
   }
 

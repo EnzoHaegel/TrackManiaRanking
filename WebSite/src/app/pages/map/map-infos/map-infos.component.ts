@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { IMap } from 'src/app/models/IModels';
+import { IMap, IZone } from 'src/app/models/IModels';
 
 @Component({
   selector: 'app-map-infos',
@@ -33,8 +33,11 @@ export class MapInfosComponent implements OnInit {
     return res + millisecondes;
   }
 
-  public getFlagUrl(flag: string) {
+  public getFlagUrl(zone: IZone | null): string {
+    if (zone && zone.parent && (zone.flag.toUpperCase() !== zone.flag || zone.flag.length != 3)) {
+      return this.getFlagUrl(zone.parent);
+    }
     let URL = "https://trackmania.io/img/flags/"
-    return URL + flag + ".jpg";
+    return URL + (zone?.flag ? zone.flag : 'WOR') + ".jpg";
   }
 }

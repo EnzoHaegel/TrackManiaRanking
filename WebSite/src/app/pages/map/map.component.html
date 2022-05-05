@@ -1,11 +1,15 @@
 <div class="container">
     <div class="map">
+        <button mat-raised-button color="primary" (click)="backClicked()" class="back-button">
+            <mat-icon>arrow_back</mat-icon>
+                Back to totd
+            </button>
         <img class="map-thumb" [src]="map?.thumbnailUrl">
         <div class="map-infos">
             <app-map-infos [map]="map"></app-map-infos>
         </div>
     </div>
     <div *ngIf="map" class="chrono">
-        <app-map-leaderboard [map]="map" [leaderboardUuid]="maps.days[1].leaderboarduid"></app-map-leaderboard>
+        <app-map-leaderboard [map]="map" [leaderboardUuid]="leaderboarduid"></app-map-leaderboard>
     </div>
 </div>

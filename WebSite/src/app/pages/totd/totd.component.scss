@@ -1,0 +1,101 @@
+.container {
+    margin: 10px;
+    width: calc(100% - 20px);
+
+    .buttons {
+        margin: 20px;
+        display: flex;
+
+        .last-month-button {
+            margin-right: 10px;
+        }
+    }
+
+    .totd-container {
+        display: flex;
+        width: 100%;
+        overflow-wrap: break-word;
+        flex-wrap: wrap;
+
+        .totd {
+            margin: 10px;
+            min-width: 12%;
+            max-width: 12%;
+            display: block;
+            position: relative;
+            overflow-wrap: break-word;
+            flex-wrap: wrap;
+
+            .map-thumbnail {
+                width: 100%;
+                border-radius: 50% 0 / 120%;
+                transform: skew(-4deg);
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                cursor: pointer;
+            }
+
+            .map-name {
+                text-decoration: none;
+                width: calc(100% - 40px);
+                overflow-wrap: break-word;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 0 30% / 70%;
+                position: absolute;
+                bottom: 8px;
+                padding: 5px;
+            }
+        }
+    }
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+// if size is under 1200px
+@media screen and (max-width: 1200px) {
+    .container {
+        .totd-container {
+            .totd {
+                min-width: 16%;
+                max-width: 16%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        .totd-container {
+            .totd {
+                min-width: 22%;
+                max-width: 22%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        .totd-container {
+            .totd {
+                min-width: 30%;
+                max-width: 30%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        .totd-container {
+            .totd {
+                min-width: calc(45% - 20px);
+            }
+        }
+    }
+}

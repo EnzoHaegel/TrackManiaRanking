@@ -19,7 +19,6 @@
 .example-container {
     display: flex;
     flex-direction: column;
-    max-height: 500px;
     min-width: 300px;
 
     .tag {
@@ -40,14 +39,18 @@
 
 .mat-table {
     overflow: auto;
-    max-height: 500px;
+    max-height: 550px;
 }
 
 .mat-column-position {
-    flex: 0 0 8%;
+    flex: 0 0 7%;
 }
 
 .mat-column-time {
+    flex: 0 0 15%;
+}
+
+.mat-column-medal {
     flex: 0 0 15%;
 }
 
@@ -63,5 +66,12 @@
 
     .mat-column-medal {
         flex: 0 0 10%;
+    }
+
+    .example-container {
+        .flag {
+            visibility: hidden;
+            height: 0;
+        }
     }
 }

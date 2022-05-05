@@ -23,8 +23,8 @@ export class TmioApiService {
 
   constructor(private http: HttpClient, private apiMapperService: ApiMapperService) { }
 
-  public getMonthlyTotd(): Observable<IMonthTotd> {
-    return this.http.get<IMap[]>(this.API_URL + 'totd/0', this.httpOptions).pipe(
+  public getMonthlyTotd(month: number = 0): Observable<IMonthTotd> {
+    return this.http.get<IMap[]>(this.API_URL + 'totd/' + month, this.httpOptions).pipe(
       map(data => this.apiMapperService.monthTotdMapper(data))
     );
   }
@@ -35,8 +35,8 @@ export class TmioApiService {
     );
   }
 
-  public getLeaderboard(mapperId: string, mapUid: string, length: number): Observable<ILeaderBoard> {
-    return this.http.get<ILeaderBoard>(this.API_URL + 'leaderboard/' + mapperId + '/' + mapUid + '?offset=0&length=' + length, this.httpOptions).pipe(
+  public getLeaderboard(mapperId: string, mapUid: string, length: number, offset: number = 0): Observable<ILeaderBoard> {
+    return this.http.get<ILeaderBoard>(this.API_URL + 'leaderboard/' + mapperId + '/' + mapUid + '?offset=' + offset + '&length=' + length, this.httpOptions).pipe(
       map(data => this.apiMapperService.leaderBoardMapper(data))
     );
   }

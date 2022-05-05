@@ -19,13 +19,16 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { TotdComponent } from './pages/totd/totd.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     MapInfosComponent,
-    MapLeaderboardComponent
+    MapLeaderboardComponent,
+    TotdComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

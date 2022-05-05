@@ -26,7 +26,7 @@ export interface IPlayer {
     tag: string;
     id: string;
     zone: IZone | null;
-    meta: IMeta;
+    meta: IMeta | undefined;
 }
 
 export interface IZone {
@@ -36,9 +36,9 @@ export interface IZone {
 }
 
 export interface IMeta {
-    twitch: string;
-    youtube: string;
-    twitter: string;
+    twitch: string | undefined;
+    youtube: string | undefined;
+    twitter: string | undefined;
 }
 
 export interface IPlayerRun {

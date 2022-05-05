@@ -1,11 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { IPlayerRun, IMap, ILeaderBoard } from 'src/app/models/IModels';
+import { IPlayerRun, IMap, ILeaderBoard, IZone } from 'src/app/models/IModels';
 import { TmioApiService } from 'src/app/services/tmio-api.service';
-
-
-const date = new Date().toDateString() + ' ' + new Date().toTimeString().substring(0, 5)
-
 @Component({
   selector: 'app-map-leaderboard',
   templateUrl: './map-leaderboard.component.html',
@@ -17,18 +12,20 @@ export class MapLeaderboardComponent implements OnInit {
 
   public displayedColumns: string[] = ['position', 'player', 'time', 'medal', 'date'];
   public dataSource: IPlayerRun[] = [];
+  public showedDataSource: IPlayerRun[] = [];
   public clickedRows = new Set<IPlayerRun>();
   public leaderBoard!: ILeaderBoard;
+  public load: boolean = false;
 
   constructor(private tmioApiService: TmioApiService) {}
 
   ngOnInit(): void {
-    console.log(this.map)
     if (this.map && this.leaderboardUuid) {
-      this.tmioApiService.getLeaderboard(this.leaderboardUuid, this.map.mapUid, 15).subscribe({
+      this.tmioApiService.getLeaderboard(this.leaderboardUuid, this.map.mapUid, 20).subscribe({
         next: (leaderBoard) => {
           this.leaderBoard = leaderBoard;
           this.dataSource = this.leaderBoard.tops;
+          this.showedDataSource = this.dataSource;
         },
         error: (err) => {
           console.log(err);
@@ -47,17 +44,25 @@ export class MapLeaderboardComponent implements OnInit {
     const limit = tableScrollHeight - tableViewHeight - buffer;    
     if (scrollLocation > limit) {
       // concat more data to existing data
-      this.dataSource = this.dataSource.concat(this.leaderBoard.tops);
+      if (this.map && this.leaderboardUuid && !this.load) {
+        this.load = true;
+        this.tmioApiService.getLeaderboard(this.leaderboardUuid, this.map.mapUid, 20, this.dataSource.length).subscribe({
+          next: (leaderBoard) => {
+            this.leaderBoard = leaderBoard;
+            this.dataSource = this.dataSource.concat(this.leaderBoard.tops);
+            this.showedDataSource = this.dataSource;
+            this.load = false;
+          },
+          error: (err) => {
+            console.log(err);
+          }
+        });
+      }
     }
   }
 
   public onRowClicked(row: IPlayerRun) {
     console.log(row);
-  }
-
-  public applyFilter(event: Event) {
-    // const filterValue = (event.target as HTMLInputElement).value;
-    // this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   public returnTime(time: number) {
@@ -75,13 +80,42 @@ export class MapLeaderboardComponent implements OnInit {
     return res + millisecondes;
   }
 
-  public getFlagUrl(flag: string) {
+  public getFlagUrl(zone: IZone): string {
+    if (zone && zone.parent && (zone.flag.toUpperCase() !== zone.flag || zone.flag.length != 3)) {
+      return this.getFlagUrl(zone.parent);
+    }
     let URL = "https://trackmania.io/img/flags/"
-    return URL + flag + ".jpg";
+    return URL + (zone.flag ? zone.flag : 'WOR') + ".jpg";
   }
 
   public getMedalImage(medal: string) {
     let URL = "https://trackmania.io/img/medal_"
     return URL + medal + ".png";
+  }
+
+  public calcMedal(time: number) {
+    if (time <= this.map.authorScore)
+      return "author";
+    else if (time <= this.map.goldScore)
+      return "gold";
+    else if (time <= this.map.silverScore)
+      return "silver";
+    else if (time <= this.map.bronzeScore)
+      return "bronze";
+    else
+      return "";
+  }
+
+  public dateFormatted(date: string) {
+    let dateArray = date.split('T');
+    return dateArray[0] + ' ' + dateArray[1].substring(0, 5);
+  }
+
+  public sortBySearchedUsername(event: any) {
+    let searchedUsername = event.target.value;
+    // remove all rows that are not the searched username
+    this.showedDataSource = this.dataSource.filter((row) => {
+      return row.player.name.toLowerCase().includes(searchedUsername.toLowerCase());
+    });
   }
 }

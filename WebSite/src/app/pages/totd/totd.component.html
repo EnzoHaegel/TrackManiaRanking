@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="buttons">
+        <button mat-raised-button color="primary" (click)="lastMonthClicked()" class="last-month-button">
+            <mat-icon>arrow_back</mat-icon>
+            Last month
+        </button>
+        <button *ngIf="month > 0" mat-raised-button color="primary" (click)="nextMonthClicked()" class="next-month-button">
+            Next month
+            <mat-icon>arrow_forward</mat-icon>
+        </button>
+    </div>
+
+    <div #container class="totd-container">
+        <a *ngFor="let totd of maps?.days" class="totd" routerLink="/map" [queryParams]="{mapUid: totd.map?.mapUid, leaderboarduid: totd.leaderboarduid}">
+            <img class="map-thumbnail" [src]="totd.map?.thumbnailUrl">
+            <div class="map-name">
+                <lib-ng-colored-tm-text [text]="totd.map?.name" [fontSize]="calcFontSize(totd.map?.name || '', container.offsetWidth)"></lib-ng-colored-tm-text>
+            </div>
+        </a>
+    </div>
+</div>
