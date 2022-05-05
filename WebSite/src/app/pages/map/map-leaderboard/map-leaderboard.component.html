@@ -15,7 +15,7 @@
 
     <ng-container matColumnDef="position">
         <mat-header-cell *matHeaderCellDef> N° </mat-header-cell>
-        <mat-cell *matCellDef="let element; let i = index">{{i + 1}}</mat-cell>
+        <mat-cell *matCellDef="let element">{{ element.position }}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="player">

@@ -15,8 +15,8 @@ export class TmioApiService {
 
   public httpOptions = {
     headers: new HttpHeaders({
+      'User-Agent': 'trackmaniayo / 0.0.1 A wish version of trackmania.io to train me in Angular',
       'Content-Type': 'application/json',
-      'Accept': 'application/json',
       'Contact': 'Discord: Poseidon989#6913'
     }),
   };
