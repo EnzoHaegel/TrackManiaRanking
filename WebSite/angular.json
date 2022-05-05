@@ -108,6 +108,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "WebSite:build:production",
+            "firebaseProject": "trackmaniayo",
+            "firebaseHostingSite": "trackmaniayo"
+          }
         }
       }
     }
