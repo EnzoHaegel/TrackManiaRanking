@@ -1,12 +1,25 @@
 import { Injectable } from '@angular/core';
-import { ILeaderBoard, IMap, IMeta, IMonthTotd, IPlayer, IPlayerRun, ITotd, IZone } from '../models/IModels';
+import {
+  IAccount,
+  IDivision,
+  ILeaderBoard,
+  IMap,
+  IMatchmaking,
+  IMatchmakingInfo,
+  IMeta,
+  IMonthTotd,
+  IPlayer,
+  IPlayerRun,
+  ITotd,
+  ITrophies,
+  IZone,
+} from '../models/IModels';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiMapperService {
-
-  constructor() { }
+  constructor() {}
 
   public mapMapper(data: any): IMap {
     return {
@@ -29,7 +42,7 @@ export class ApiMapperService {
       thumbnailUrl: data.thumbnailUrl,
       authorplayer: this.playerMapper(data.authorplayer),
       submitterplayer: this.playerMapper(data.submitterplayer),
-      exchangeid: data.exchangeid
+      exchangeid: data.exchangeid,
     };
   }
 
@@ -39,7 +52,7 @@ export class ApiMapperService {
       tag: data.tag,
       id: data.id,
       zone: data.zone ? this.zoneMapper(data.zone) : null,
-      meta: data.meta ? this.metaMapper(data.meta) : undefined
+      meta: data.meta ? this.metaMapper(data.meta) : undefined,
     };
   }
 
@@ -47,7 +60,7 @@ export class ApiMapperService {
     return {
       name: data.name,
       flag: data.flag,
-      parent: data.parent ? this.zoneMapper(data.parent) : null
+      parent: data.parent ? this.zoneMapper(data.parent) : null,
     };
   }
 
@@ -66,13 +79,13 @@ export class ApiMapperService {
       time: data.time,
       filename: data.filename,
       timestamp: data.timestamp,
-      url: data.url
+      url: data.url,
     };
   }
 
   public leaderBoardMapper(data: any): ILeaderBoard {
     return {
-      tops: data.tops.map((x: any) => this.playerRunMapper(x))
+      tops: data.tops.map((x: any) => this.playerRunMapper(x)),
     };
   }
 
@@ -82,7 +95,7 @@ export class ApiMapperService {
       leaderboarduid: data.leaderboarduid,
       map: this.mapMapper(data.map),
       monthday: data.monthday,
-      weekday: data.weekday
+      weekday: data.weekday,
     };
   }
 
@@ -93,7 +106,62 @@ export class ApiMapperService {
       month: data.month,
       monthcount: data.monthcount,
       monthoffset: data.monthoffset,
-      year: data.year
+      year: data.year,
+    };
+  }
+
+  public trophiesMapper(data: any): ITrophies {
+    return {
+      points: data.points,
+      timestamp: data.timestamp,
+      counts: data.counts,
+      echelon: data.echelon,
+      zone: this.zoneMapper(data.zone),
+      zonepositions: data.zonepositions,
+    };
+  }
+
+  public accountMapper(data: any): IAccount {
+    return {
+      accountid: data.accountid,
+      displayname: data.displayname,
+      timestamp: data.timestamp,
+      clubtag: data.clubtag,
+      clubtagtimestamp: data.clubtagtimestamp,
+      trophies: this.trophiesMapper(data.trophies),
+      matchmaking: data.matchmaking.map((x: any) => this.matchmakingMapper(x)),
+      meta: data.meta ? this.metaMapper(data.meta) : undefined,
+    };
+  }
+
+  public matchmakingMapper(data: any): IMatchmaking {
+    return {
+      info: this.matchmakingInfoMapper(data.info),
+      total: data.total,
+    };
+  }
+
+  public matchmakingInfoMapper(data: any): IMatchmakingInfo {
+    return {
+      typename: data.typename,
+      typeid: data.typeid,
+      accountid: data.accountid,
+      rank: data.rank,
+      score: data.score,
+      progression: data.progression,
+      division: this.divisionMapper(data.division),
+      division_next: this.divisionMapper(data.division_next),
+    };
+  }
+
+  public divisionMapper(data: any): IDivision {
+    return {
+      position: data.position,
+      rule: data.rule,
+      minpoints: data.minpoints,
+      maxpoints: data.maxpoints,
+      minwins: data.minwins,
+      maxwins: data.maxwins,
     };
   }
 }

@@ -21,7 +21,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-    "@icenore/ng-tm-colors-text": "^1.2.4",
+    "@icenore/ng-tm-colors-text": "^1.2.5",
     "firebase": "^9.7.0",
     "ng-colored-tm-text": "^1.0.4",
     "ng-http-loader": "^11.0.1",

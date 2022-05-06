@@ -70,3 +70,48 @@ export interface IMonthTotd {
     monthoffset: number;
     year: number;
 }
+
+export interface IAccount {
+    accountid: string;
+    displayname: string;
+    timestamp: string;
+    clubtag: string;
+    clubtagtimestamp: string;
+    trophies: ITrophies;
+    matchmaking: IMatchmaking[];
+    meta: IMeta | undefined;
+}
+
+export interface ITrophies {
+    points: number;
+    timestamp: string;
+    counts: number[];
+    echelon: number;
+    zone: IZone;
+    zonepositions: number[];
+}
+
+export interface IMatchmaking {
+    info: IMatchmakingInfo;
+    total: number;
+}
+
+export interface IMatchmakingInfo {
+    typename: string;
+    typeid: number;
+    accountid: string;
+    rank: number;
+    score: number;
+    progression: number;
+    division: IDivision;
+    division_next: IDivision;
+}
+
+export interface IDivision {
+    position: number;
+    rule: string;
+    minpoints: number;
+    maxpoints: number;
+    minwins: number;
+    maxwins: number;
+}

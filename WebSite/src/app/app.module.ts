@@ -21,14 +21,15 @@ import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { TotdComponent } from './pages/totd/totd.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { PlayerProfilComponent } from './pages/player-profil/player-profil.component';
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     MapInfosComponent,
     MapLeaderboardComponent,
-    TotdComponent
+    TotdComponent,
+    PlayerProfilComponent
   ],
   imports: [
     BrowserModule,

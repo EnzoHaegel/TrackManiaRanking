@@ -1,1 +1,64 @@
-<p>player-profil works!</p>
+<!-- export interface IAccount {
+    accountid: string;
+    displayname: string;
+    timestamp: string;
+    clubtag: string;
+    clubtagtimestamp: string;
+    trophies: ITrophies;
+    matchmaking: IMatchmaking[];
+    meta: IMeta | undefined;
+}
+
+export interface ITrophies {
+    points: number;
+    timestamp: string;
+    counts: number[];
+    echelon: number;
+    zone: IZone;
+    zonepositions: number[];
+}
+
+export interface IMatchmaking {
+    info: IMatchmakingInfo;
+    total: number;
+}
+
+export interface IMatchmakingInfo {
+    typename: string;
+    typeid: number;
+    accountid: string;
+    rank: number;
+    score: number;
+    progression: number;
+    division: IDivision;
+    division_next: IDivision;
+}
+
+export interface IDivision {
+    position: number;
+    rule: string;
+    minpoints: number;
+    maxpoints: number;
+    minwins: number;
+    maxwins: number;
+} -->
+
+<div class="container">
+    <div class="player-infos">
+        <div class="player-name">
+            <img
+              class="flag"
+              [src]="getFlagUrl(account!.trophies.zone)"
+              alt=""
+            />
+            <div *ngIf="account!.clubtag" class="tag">
+                <lib-ng-colored-tm-text [text]="account?.clubtag" [fontSize]="20"></lib-ng-colored-tm-text>
+            </div>
+            <h1>{{ account!.displayname }}</h1>
+        </div>
+        <div class="player-zone">
+            {{getZoneName(account!.trophies.zone)}}
+        </div>
+    </div>
+    
+</div>

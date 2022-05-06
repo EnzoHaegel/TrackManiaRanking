@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IPlayerRun, IMap, ILeaderBoard, IZone } from 'src/app/models/IModels';
 import { TmioApiService } from 'src/app/services/tmio-api.service';
 @Component({
@@ -17,7 +18,7 @@ export class MapLeaderboardComponent implements OnInit {
   public leaderBoard!: ILeaderBoard;
   public load: boolean = false;
 
-  constructor(private tmioApiService: TmioApiService) {}
+  constructor(private tmioApiService: TmioApiService, private router: Router) {}
 
   ngOnInit(): void {
     if (this.map && this.leaderboardUuid) {
@@ -63,6 +64,8 @@ export class MapLeaderboardComponent implements OnInit {
 
   public onRowClicked(row: IPlayerRun) {
     console.log(row);
+    // go to /player with query params playerId=row.player.id
+    this.router.navigate(['/player'], { queryParams: { accountId: row.player.id } });
   }
 
   public returnTime(time: number) {
