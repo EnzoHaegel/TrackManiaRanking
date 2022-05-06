@@ -13,6 +13,7 @@
     <div #container class="totd-container">
         <a *ngFor="let totd of maps?.days" class="totd" routerLink="/map" [queryParams]="{mapUid: totd.map?.mapUid, leaderboarduid: totd.leaderboarduid}">
             <img class="map-thumbnail" [src]="totd.map?.thumbnailUrl">
+            <div class="overlay"></div>
             <div class="map-name">
                 <lib-ng-colored-tm-text [text]="totd.map?.name" [fontSize]="calcFontSize(totd.map?.name || '', container.offsetWidth)"></lib-ng-colored-tm-text>
             </div>
