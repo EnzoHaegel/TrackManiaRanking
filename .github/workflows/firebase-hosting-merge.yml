@@ -11,12 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: start server
-        working-directory: ./back
-        run: npm run start
+      - name: Install angular CLI
+        run: npm install -g @angular/cli
+      - name: Build Project
+        working-directory: ./WebSite
+        run: npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TRACKMANIAYO_API }}'
-          channelId: live
-          projectId: trackmaniayo-api
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_TRACKMANIAYO }}'
+          projectId: trackmaniayo
