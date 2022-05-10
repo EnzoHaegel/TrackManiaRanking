@@ -26,6 +26,12 @@
             overflow-wrap: break-word;
             flex-wrap: wrap;
 
+            &:hover {
+                transform: scale(1.05);
+                transition: all 0.2s ease-out;
+                z-index: 5;
+            }
+
             .map-thumbnail {
                 width: 100%;
                 border-radius: 50% 0 / 120%;
@@ -34,12 +40,22 @@
                 cursor: pointer;
             }
 
+            .overlay {
+                padding: 50%;
+                border-radius: 50% 0 / 120%;
+                transform: skew(-4deg);
+                position: absolute;
+                top: 0;
+                left: 0;
+                // linear gradient alpha 0 top to bottom black alpha 1
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+            }
+
             .map-name {
                 text-decoration: none;
                 width: calc(100% - 40px);
                 overflow-wrap: break-word;
-                background-color: rgba(0, 0, 0, 0.5);
-                border-radius: 0 30% / 70%;
+                flex-wrap: wrap;
                 position: absolute;
                 bottom: 8px;
                 padding: 5px;

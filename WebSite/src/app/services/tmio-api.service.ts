@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ILeaderBoard, IMap, IMeta, IMonthTotd, IPlayer, IPlayerRun, IZone } from '../models/IModels';
+import { ILeaderBoard, IMap, IMonthTotd, IPlayer, IAccount } from '../models/IModels';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -11,7 +11,7 @@ import { ApiMapperService } from './api-mapper.service';
 })
 export class TmioApiService {
 
-  public API_URL: string = 'https://trackmania.io/api/';
+  public API_URL: string = 'http://localhost:4000/api/';
 
   public httpOptions = {
     headers: new HttpHeaders({
@@ -38,6 +38,13 @@ export class TmioApiService {
   public getLeaderboard(mapperId: string, mapUid: string, length: number, offset: number = 0): Observable<ILeaderBoard> {
     return this.http.get<ILeaderBoard>(this.API_URL + 'leaderboard/' + mapperId + '/' + mapUid + '?offset=' + offset + '&length=' + length, this.httpOptions).pipe(
       map(data => this.apiMapperService.leaderBoardMapper(data))
+    );
+  }
+
+  // /api/player/:accountid
+  public getPlayer(accountId: string): Observable<IAccount> {
+    return this.http.get<IPlayer>(this.API_URL + 'player/' + accountId, this.httpOptions).pipe(
+      map(data => this.apiMapperService.accountMapper(data))
     );
   }
 }

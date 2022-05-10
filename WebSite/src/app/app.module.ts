@@ -21,6 +21,10 @@ import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { TotdComponent } from './pages/totd/totd.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PlayerProfilComponent } from './pages/player-profil/player-profil.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { ColorTesterComponent } from './pages/color-tester/color-tester.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MapComponent,
     MapInfosComponent,
     MapLeaderboardComponent,
-    TotdComponent
+    TotdComponent,
+    PlayerProfilComponent,
+    ColorTesterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
