@@ -33,5 +33,37 @@
         .player-zone {
             font-size: 1.2rem;
         }
+
+        .meta {
+            display: flex;
+            margin-top: 10px;
+
+            .meta-info {
+                display: flex;
+                margin: 5px;
+
+                .meta-link {
+                    color: inherit;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    align-items: center;
+
+                    .icon {
+                        font-size: 1rem;
+                    }
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .youtube {
+                background-color: rgb(255, 0, 0);
+                border-radius: 30% 0 / 120%;
+                transform: skew(-8deg);
+                padding: 5px;
+            }
+        }
     }
 }

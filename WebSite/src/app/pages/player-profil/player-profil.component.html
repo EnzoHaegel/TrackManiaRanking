@@ -44,21 +44,45 @@ export interface IDivision {
 } -->
 
 <div class="container">
-    <div class="player-infos">
-        <div class="player-name">
-            <img
-              class="flag"
-              [src]="getFlagUrl(account!.trophies.zone)"
-              alt=""
-            />
-            <div *ngIf="account!.clubtag" class="tag">
-                <lib-ng-colored-tm-text [text]="account?.clubtag" [fontSize]="20"></lib-ng-colored-tm-text>
-            </div>
-            <h1>{{ account!.displayname }}</h1>
+  <div class="player-infos">
+    <div class="player-name">
+      <img class="flag" [src]="getFlagUrl(account!.trophies.zone)" alt="" />
+      <div *ngIf="account!.clubtag" class="tag">
+        <lib-ng-colored-tm-text
+          [text]="account?.clubtag"
+          [fontSize]="20"
+        ></lib-ng-colored-tm-text>
+      </div>
+      <h1>{{ account!.displayname }}</h1>
+    </div>
+    <div class="player-zone">
+      {{ getZoneName(account!.trophies.zone) }}
+    </div>
+    <div class="meta">
+        <div *ngIf="account.meta?.youtube" class="meta-info youtube">
+            <a href="{{ 'https://youtube.com/' + account.meta?.youtube }}" target="_blank" class="meta-link">
+                <i class="fa-solid fa-play"></i>
+                <span>Youtube</span>
+            </a>
         </div>
-        <div class="player-zone">
-            {{getZoneName(account!.trophies.zone)}}
+        <div *ngIf="account.meta?.twitch" class="meta-info">
+            <a href="{{ account.meta?.twitch }}" target="_blank" class="meta-link">
+                <mat-icon class="icon">ondemand_video</mat-icon>
+                <span>Twitch</span>
+            </a>
+        </div>
+        <div *ngIf="account.meta?.twitter" class="meta-info">
+            <a href="{{ account.meta?.twitter }}" target="_blank" class="meta-link">
+                <mat-icon class="icon">message</mat-icon>
+                <span>Twitch</span>
+            </a>
         </div>
     </div>
-    
+  </div>
+
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="First">Content 1</mat-tab>
+    <mat-tab label="Second">Content 2</mat-tab>
+    <mat-tab label="Third">Content 3</mat-tab>
+  </mat-tab-group>
 </div>

@@ -1,0 +1,60 @@
+.container {
+    width: calc(100% - 20px);
+    margin-top: 20px;
+    // center element
+
+    .input {
+        width: calc(100% - 20px);
+        margin: 10px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .form-field {
+            width: 80%;
+        }
+    }
+
+    .colors {
+        width: calc(100% - 20px);
+        margin: 10px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        .array {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 10px;
+
+            .lines {
+                display: flex;
+                
+                .elements {
+                    // create little square for each color
+                    width: 30px;
+                    height: 30px;
+                    margin: 0;
+                    background-color: rgb(69, 69, 69);
+                    border-radius: 3px;
+                    border: 1px solid rgb(42, 42, 42);
+                    font-size: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    &:hover {
+                        z-index: 1;
+                        transition: all 0.2s ease;
+                        transform: scale(1.5);
+                        box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.7);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
