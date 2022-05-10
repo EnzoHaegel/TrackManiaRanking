@@ -22,6 +22,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { TotdComponent } from './pages/totd/totd.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PlayerProfilComponent } from './pages/player-profil/player-profil.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { ColorTesterComponent } from './pages/color-tester/color-tester.component';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,8 @@ import { PlayerProfilComponent } from './pages/player-profil/player-profil.compo
     MapInfosComponent,
     MapLeaderboardComponent,
     TotdComponent,
-    PlayerProfilComponent
+    PlayerProfilComponent,
+    ColorTesterComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,9 @@ import { PlayerProfilComponent } from './pages/player-profil/player-profil.compo
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ColorTesterComponent } from './pages/color-tester/color-tester.component';
 import { MapComponent } from './pages/map/map.component';
 import { PlayerProfilComponent } from './pages/player-profil/player-profil.component';
 import { TotdComponent } from './pages/totd/totd.component';
@@ -10,6 +11,7 @@ const routes: Routes = [
   { path: 'map', component: MapComponent },
   { path: 'totd', component: TotdComponent},
   { path: 'player', component: PlayerProfilComponent},
+  { path: 'color', component: ColorTesterComponent},
   { path: '**', redirectTo: 'totd' }
 ];
 

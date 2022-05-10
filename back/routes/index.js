@@ -2,11 +2,17 @@ const express = require('express');
 const router = express.Router();
 const https = require('https');
 
-router.get('/', (req, res) => {
+// a function that lag request and deny access if it don't come from localhost:4200
+function checkLocalhost (req, res, next) {
+    console.log('Route:', req.url, ' From:', req.headers.origin);
+    next();
+}
+
+router.get('/', checkLocalhost, (req, res) => {
     res.status(200).json({ message: 'API works' });
 });
 
-router.get('/totd/:month', (req, res) => {
+router.get('/totd/:month', checkLocalhost, (req, res) => {
     const month = req.params.month;
     // add header with user agent to avoid 403 error
     const options = {
@@ -31,7 +37,7 @@ router.get('/totd/:month', (req, res) => {
 });
 
 // https://trackmania.io/api/map/${mapUid}
-router.get('/map/:mapUid', (req, res) => {
+router.get('/map/:mapUid', checkLocalhost, (req, res) => {
     const mapUid = req.params.mapUid;
     const options = {
         hostname: 'trackmania.io',
@@ -55,7 +61,7 @@ router.get('/map/:mapUid', (req, res) => {
 });
 
 // 'trackmania.io/api/leaderboard/' + mapperId + '/' + mapUid + '?offset=' + offset + '&length=' + length
-router.get('/leaderboard/:mapperId/:mapUid', (req, res) => {
+router.get('/leaderboard/:mapperId/:mapUid', checkLocalhost, (req, res) => {
     const mapperId = req.params.mapperId;
     const mapUid = req.params.mapUid;
     const offset = req.query.offset || 0;
@@ -82,7 +88,7 @@ router.get('/leaderboard/:mapperId/:mapUid', (req, res) => {
 });
 
 // https://trackmania.io/api/player/:accountid
-router.get('/player/:accountid', (req, res) => {
+router.get('/player/:accountid', checkLocalhost, (req, res) => {
     const accountid = req.params.accountid;
     const options = {
         hostname: 'trackmania.io',
