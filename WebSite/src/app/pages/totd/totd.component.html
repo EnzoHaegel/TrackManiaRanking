@@ -15,7 +15,7 @@
             <img class="map-thumbnail" [src]="totd.map?.thumbnailUrl">
             <div class="overlay"></div>
             <div class="map-name">
-                <lib-ng-colored-tm-text [text]="totd.map?.name" [fontSize]="calcFontSize(totd.map?.name || '', container.offsetWidth)"></lib-ng-colored-tm-text>
+                <lib-ng-colored-tm-text [text]="totd.map?.name" [fontSize]="calcFontSize(totd.map?.name || '', container.offsetWidth)" [dark_theme]="true"></lib-ng-colored-tm-text>
             </div>
         </a>
     </div>

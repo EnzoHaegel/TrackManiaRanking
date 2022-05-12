@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="map">
+    <div *ngIf="map" class="map">
         <button mat-raised-button color="primary" (click)="backClicked()" class="back-button">
             <mat-icon>arrow_back</mat-icon>
                 Back to totd
@@ -11,5 +11,8 @@
     </div>
     <div *ngIf="map" class="chrono">
         <app-map-leaderboard [map]="map" [leaderboardUuid]="leaderboarduid"></app-map-leaderboard>
+    </div>
+    <div *ngIf="!map" class="spinner">
+        <mat-spinner class="element"></mat-spinner>
     </div>
 </div>
