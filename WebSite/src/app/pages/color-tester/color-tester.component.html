@@ -1,31 +1,57 @@
 <div class="container">
-    <div class="input">
-        <mat-form-field class="form-field" appearance="fill">
-          <mat-label>Write text with trackmania format</mat-label>
-          <input matInput type="text" [(ngModel)]="value" />
-          <button
-            *ngIf="value"
-            matSuffix
-            mat-icon-button
-            aria-label="Clear"
-            (click)="value = ''"
-          >
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-          <div class="result">
-              Result:
-              <lib-ng-colored-tm-text [text]="value" [fontSize]="20"></lib-ng-colored-tm-text>
-          </div>
+  <div class="input">
+    <mat-form-field class="form-field" appearance="fill">
+      <mat-label>Write text with trackmania format</mat-label>
+      <input matInput type="text" [(ngModel)]="value" />
+      <button
+        *ngIf="value"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="value = ''"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    Result:
+    <!-- A div with result-bg class and a background color style based on the variable bg_color that can be changed -->
+    <div class="result-bg" [style.background-color]="getBgColor()">
+      <lib-ng-colored-tm-text
+        [text]="value"
+        [fontSize]="20"
+      ></lib-ng-colored-tm-text>
     </div>
+    <mat-slider
+    thumbLabel
+    [displayWith]="formatLabel"
+    step="1"
+    min="0"
+    max="255"
+    aria-label="percent"
+    [(ngModel)]="bgPercent"></mat-slider>
+  </div>
 
-    <div class="colors">
-        <div *ngFor="let array of colors" class="array">
-            <div *ngFor="let line of array" class="lines">
-                <div *ngFor="let elements of line" class="elements" [style]="{'background-color': elements}" (click)="addColor(elements)">
-                    <span>{{elements}}</span>
-                </div>
-            </div>
+  <div class="colors">
+    <div
+      *ngFor="let array of colors; let z = index"
+      class="array"
+      [attr.data-index]="z"
+    >
+      <div
+        *ngFor="let line of array; let x = index"
+        class="lines"
+        [attr.data-index]="x"
+      >
+        <div
+          *ngFor="let elements of line; let y = index"
+          class="elements"
+          [style]="{ 'background-color': elements }"
+          (click)="addColor(elements)"
+          [attr.data-index]="y"
+        >
+          <span [style]="calcColor(y, x, z)">{{ elements }}</span>
         </div>
+      </div>
     </div>
+  </div>
 </div>

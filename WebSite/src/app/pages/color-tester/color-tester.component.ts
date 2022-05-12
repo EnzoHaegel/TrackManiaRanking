@@ -8,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class ColorTesterComponent implements OnInit {
   public value: string = '$o$FAFTest';
 
+  public bgPercent: number = 42;
+
   public colors: string[][][] = [];
+
+  public bg_color: string = '#ffffff';
 
   constructor() { }
 
@@ -31,5 +35,20 @@ export class ColorTesterComponent implements OnInit {
   public addColor(color: string): void {
     color = color.substring(1);
     this.value += '$' + color;
+  }
+
+  public calcColor(r: number, g: number, b: number) {
+    if (r*0.299 + g*0.587 + b*0.114 > 9)
+      return {'color': '#040404'}
+    return {'color': '#ffffff'};
+  }
+
+  public formatLabel(value: number) {
+    return Math.round(value * 100 / 255) + '%';
+  }
+
+  public getBgColor(): string {
+    this.bg_color = '#' + this.bgPercent.toString(16) + this.bgPercent.toString(16) + this.bgPercent.toString(16);
+    return this.bg_color;
   }
 }

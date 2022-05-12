@@ -11,6 +11,14 @@
         flex-direction: column;
         justify-content: center;
 
+        .result-bg {
+            padding: 10px 40px;
+            margin: 5px;
+            border: 1px solid #696969;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px #444;
+        }
+
         .form-field {
             width: 80%;
         }
@@ -45,8 +53,9 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    
+
                     &:hover {
+                        font-weight: bold;
                         z-index: 1;
                         transition: all 0.2s ease;
                         transform: scale(1.5);

@@ -25,6 +25,7 @@ import { PlayerProfilComponent } from './pages/player-profil/player-profil.compo
 import { MatTabsModule } from '@angular/material/tabs';
 import { ColorTesterComponent } from './pages/color-tester/color-tester.component';
 import { FormsModule } from '@angular/forms';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MatProgressSpinnerModule,
     MatTabsModule,
-    FormsModule
+    FormsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

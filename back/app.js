@@ -7,7 +7,7 @@ const app = express();
 
 const apiRequestLimiter = rateLimit({
     windowMs: 1 * 60 * 1000, // 1 minute
-    max: 60, // limit each IP to 2 requests per windowMs
+    max: 20, // limit each IP to 20 requests per windowMs
     message: "Your limit exceeded"
 })
 
