@@ -15,7 +15,12 @@ export class MapComponent implements OnInit {
 
   public map!: IMap;
   public maps!: IMonthTotd;
-  constructor(private _location: Location, private tmioApiService: TmioApiService, private route: ActivatedRoute) { }
+
+  constructor(
+    private _location: Location,
+    private tmioApiService: TmioApiService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams

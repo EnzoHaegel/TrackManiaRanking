@@ -11,7 +11,7 @@ import { ApiMapperService } from './api-mapper.service';
 })
 export class TmioApiService {
 
-  public API_URL: string = 'http://localhost:4000/api/';
+  public API_URL: string = 'https://us-central1-trackmaniayo-api.cloudfunctions.net/app/api/';
 
   public httpOptions = {
     headers: new HttpHeaders({
