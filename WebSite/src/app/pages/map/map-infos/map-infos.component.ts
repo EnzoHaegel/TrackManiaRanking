@@ -15,7 +15,8 @@ export class MapInfosComponent implements OnInit {
   ngOnInit(): void {}
 
   public downloadMap() {
-    console.log("download map");
+    // download the map with this.map.fileUrl url
+    window.open(this.map.fileUrl, "_blank");
   }
 
   public returnTime(time: number) {

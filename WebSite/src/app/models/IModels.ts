@@ -77,9 +77,9 @@ export interface IAccount {
     timestamp: string;
     clubtag: string;
     clubtagtimestamp: string;
-    trophies: ITrophies;
-    matchmaking: IMatchmaking[];
-    meta: IMeta | undefined;
+    trophies: ITrophies | null;
+    matchmaking: IMatchmaking[] | null;
+    meta: IMeta | null;
 }
 
 export interface ITrophies {
@@ -108,10 +108,10 @@ export interface IMatchmakingInfo {
 }
 
 export interface IDivision {
-    position: number;
-    rule: string;
-    minpoints: number;
-    maxpoints: number;
-    minwins: number;
-    maxwins: number;
+    position: number | null;
+    rule: string | null;
+    minpoints: number | null;
+    maxpoints: number | null;
+    minwins: number | null;
+    maxwins: number | null;
 }

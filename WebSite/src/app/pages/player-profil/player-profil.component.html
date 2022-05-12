@@ -46,17 +46,18 @@ export interface IDivision {
 <div class="container">
   <div class="player-infos">
     <div class="player-name">
-      <img class="flag" [src]="getFlagUrl(account!.trophies.zone)" alt="" />
-      <div *ngIf="account!.clubtag" class="tag">
+      <img *ngIf="account?.trophies" class="flag" [src]="getFlagUrl(account!.trophies!.zone)" alt="" />
+      <div *ngIf="account?.clubtag" class="tag">
         <lib-ng-colored-tm-text
           [text]="account?.clubtag"
           [fontSize]="20"
+          [dark_theme]="true"
         ></lib-ng-colored-tm-text>
       </div>
-      <h1>{{ account!.displayname }}</h1>
+      <h1>{{ account?.displayname }}</h1>
     </div>
     <div class="player-zone">
-      {{ getZoneName(account!.trophies.zone) }}
+      {{ getZoneName(account?.trophies!.zone) }}
     </div>
     <div class="meta">
         <div *ngIf="account.meta?.youtube" class="meta-info youtube">

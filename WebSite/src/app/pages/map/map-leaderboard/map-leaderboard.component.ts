@@ -63,8 +63,6 @@ export class MapLeaderboardComponent implements OnInit {
   }
 
   public onRowClicked(row: IPlayerRun) {
-    console.log(row);
-    // go to /player with query params playerId=row.player.id
     this.router.navigate(['/player'], { queryParams: { accountId: row.player.id } });
   }
 

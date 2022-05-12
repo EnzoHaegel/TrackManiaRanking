@@ -128,9 +128,9 @@ export class ApiMapperService {
       timestamp: data.timestamp,
       clubtag: data.clubtag,
       clubtagtimestamp: data.clubtagtimestamp,
-      trophies: this.trophiesMapper(data.trophies),
-      matchmaking: data.matchmaking.map((x: any) => this.matchmakingMapper(x)),
-      meta: data.meta ? this.metaMapper(data.meta) : undefined,
+      trophies: data.trophies ? this.trophiesMapper(data.trophies) : null,
+      matchmaking: data.matchmaking,
+      meta: data.meta ? this.metaMapper(data.meta) : null,
     };
   }
 
@@ -156,12 +156,12 @@ export class ApiMapperService {
 
   public divisionMapper(data: any): IDivision {
     return {
-      position: data.position,
-      rule: data.rule,
-      minpoints: data.minpoints,
-      maxpoints: data.maxpoints,
-      minwins: data.minwins,
-      maxwins: data.maxwins,
+      position: data.position ? data.position : null,
+      rule: data.rule ? data.rule : null,
+      minpoints: data.minpoints ? data.minpoints : null,
+      maxpoints: data.maxpoints ? data.maxpoints : null,
+      minwins: data.minwins ? data.minwins : null,
+      maxwins: data.maxwins ? data.maxwins : null,
     };
   }
 }

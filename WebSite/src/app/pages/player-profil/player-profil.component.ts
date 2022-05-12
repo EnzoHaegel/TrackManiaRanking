@@ -23,7 +23,6 @@ export class PlayerProfilComponent implements OnInit {
           this.tmioApiService.getPlayer(this.accountId).subscribe({
             next: (account) => {
               this.account = account;
-              console.log(account);
             },
             error: (err) => {
               console.log(err);
