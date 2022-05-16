@@ -26,6 +26,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ColorTesterComponent } from './pages/color-tester/color-tester.component';
 import { FormsModule } from '@angular/forms';
 import { MatSliderModule } from '@angular/material/slider';
+import { TrophiesComponent } from './pages/player-profil/trophies/trophies.component';
+import { FlagZoneComponent } from './utils/flag-zone/flag-zone.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { MatSliderModule } from '@angular/material/slider';
     MapLeaderboardComponent,
     TotdComponent,
     PlayerProfilComponent,
-    ColorTesterComponent
+    ColorTesterComponent,
+    TrophiesComponent,
+    FlagZoneComponent
   ],
   imports: [
     BrowserModule,

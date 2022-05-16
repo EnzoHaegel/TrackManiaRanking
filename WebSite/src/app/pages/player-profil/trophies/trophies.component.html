@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="trophies">
+        a
+    </div>
+    
+    <div class="tops-zone">
+        <mat-list role="list">
+            <div *ngFor="let zonePosition of account.trophies!.zonepositions; let i = index" class="item" [attr.data-index]="i">
+                <mat-list-item role="listitem">
+                    <div class="zone-position">
+                        {{ 'Top ' + zonePosition + ' ' }}
+                    </div>
+                    <div [ngStyle]="{'margin-right': '10px'}"></div>
+                    <div class="zone-name">
+                        <app-flag-zone [zone]="zoneService.getZoneN(account.trophies!.zone || null, i)"></app-flag-zone>
+                    </div>
+                    <mat-divider></mat-divider>
+                </mat-list-item>
+            </div>
+        </mat-list>
+    </div>
+</div>

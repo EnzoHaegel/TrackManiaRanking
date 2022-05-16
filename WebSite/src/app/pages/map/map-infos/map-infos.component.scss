@@ -36,6 +36,16 @@
                 height: 18px;
                 margin: 3px;
             }
+
+            .mapper-name {
+                cursor: pointer;
+
+                &:hover {
+                    color: #696969;
+                    transform: scale(1.05);
+                    transition: color 0.2s ease-in-out;
+                }
+            }
         }
     }
 }

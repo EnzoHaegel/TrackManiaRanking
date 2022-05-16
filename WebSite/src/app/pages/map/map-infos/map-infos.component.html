@@ -8,6 +8,7 @@
           <lib-ng-colored-tm-text
               [text]="map!.name"
               [fontSize]="26"
+              [dark_theme]="true"
             ></lib-ng-colored-tm-text>
         </div>
         <mat-divider></mat-divider>
@@ -25,9 +26,10 @@
               <lib-ng-colored-tm-text
                 [text]="map!.submitterplayer.tag"
                 [fontSize]="17"
+                [dark_theme]="true"
               ></lib-ng-colored-tm-text>
             </div>
-            <h4 style="margin-left: 3px">{{ " " + map!.authorplayer.name }}</h4>
+            <h4 (click)="onMapperClick()" class="mapper-name" style="margin-left: 3px">{{ " " + map!.authorplayer.name }}</h4>
           </div>
         </div>
         <mat-divider></mat-divider>

@@ -1,0 +1,6 @@
+<div *ngIf="zone" class="container">
+    <img *ngIf="zone" class="flag" [src]="zoneService.getFlagUrl(zone)" alt="">
+    <div class="name">
+        {{ zone.name }}
+    </div>
+</div>

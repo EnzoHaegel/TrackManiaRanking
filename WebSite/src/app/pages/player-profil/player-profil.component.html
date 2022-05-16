@@ -46,7 +46,7 @@ export interface IDivision {
 <div class="container">
   <div class="player-infos">
     <div class="player-name">
-      <img *ngIf="account?.trophies" class="flag" [src]="getFlagUrl(account!.trophies!.zone)" alt="" />
+      <img *ngIf="account?.trophies" class="flag" [src]="zoneService.getFlagUrl(account!.trophies!.zone)" alt="" />
       <div *ngIf="account?.clubtag" class="tag">
         <lib-ng-colored-tm-text
           [text]="account?.clubtag"
@@ -57,7 +57,7 @@ export interface IDivision {
       <h1>{{ account?.displayname }}</h1>
     </div>
     <div class="player-zone">
-      {{ getZoneName(account?.trophies!.zone) }}
+      {{ zoneService.getZoneName(account?.trophies!.zone) }}
     </div>
     <div class="meta">
         <div *ngIf="account.meta?.youtube" class="meta-info youtube">
@@ -82,7 +82,9 @@ export interface IDivision {
   </div>
 
   <mat-tab-group mat-align-tabs="start">
-    <mat-tab label="First">Content 1</mat-tab>
+    <mat-tab label="First">
+      <app-trophies [account]="account"></app-trophies>
+    </mat-tab>
     <mat-tab label="Second">Content 2</mat-tab>
     <mat-tab label="Third">Content 3</mat-tab>
   </mat-tab-group>

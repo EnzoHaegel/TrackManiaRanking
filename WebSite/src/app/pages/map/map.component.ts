@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IMap, IMonthTotd } from 'src/app/models/IModels';
 import { TmioApiService } from 'src/app/services/tmio-api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({

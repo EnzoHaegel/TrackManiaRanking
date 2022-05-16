@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 import { IMap, IZone } from 'src/app/models/IModels';
 
 @Component({
@@ -10,7 +11,9 @@ import { IMap, IZone } from 'src/app/models/IModels';
 export class MapInfosComponent implements OnInit {
   @Input() map!: IMap;
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {}
 
@@ -40,5 +43,9 @@ export class MapInfosComponent implements OnInit {
     }
     let URL = "https://trackmania.io/img/flags/"
     return URL + (zone?.flag ? zone.flag : 'WOR') + ".jpg";
+  }
+
+  public onMapperClick() {
+    this.router.navigate(['/player'], { queryParams: { accountId: this.map.authorplayer.id } });
   }
 }

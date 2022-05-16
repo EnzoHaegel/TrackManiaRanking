@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IAccount, IZone } from 'src/app/models/IModels';
 import { TmioApiService } from 'src/app/services/tmio-api.service';
+import { ZoneService } from 'src/app/services/zone.service';
 
 @Component({
   selector: 'app-player-profil',
@@ -13,7 +14,11 @@ export class PlayerProfilComponent implements OnInit {
 
   public account!: IAccount;
 
-  constructor(private tmioApiService: TmioApiService, private route: ActivatedRoute) { }
+  constructor(
+    public zoneService: ZoneService,
+    private tmioApiService: TmioApiService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams
@@ -23,6 +28,7 @@ export class PlayerProfilComponent implements OnInit {
           this.tmioApiService.getPlayer(this.accountId).subscribe({
             next: (account) => {
               this.account = account;
+              console.log(account);
             },
             error: (err) => {
               console.log(err);
@@ -31,17 +37,5 @@ export class PlayerProfilComponent implements OnInit {
         }
       }
     );
-  }
-
-  public getFlagUrl(zone: IZone | null): string {
-    if (zone && zone.parent && (zone.flag.toUpperCase() !== zone.flag || zone.flag.length != 3)) {
-      return this.getFlagUrl(zone.parent);
-    }
-    let URL = "https://trackmania.io/img/flags/"
-    return URL + (zone?.flag ? zone.flag : 'WOR') + ".jpg";
-  }
-
-  public getZoneName(zone: IZone | null): string {
-    return zone ? zone.name + (zone.parent ? ' / ' + this.getZoneName(zone.parent) : '' ) : 'Unknown';
   }
 }
